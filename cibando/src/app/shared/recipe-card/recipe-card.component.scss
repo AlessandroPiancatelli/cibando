@@ -1,0 +1,26 @@
+.container-cards{
+ display: block;
+ float:left;
+ height: 100vh;
+ .card{
+  width:23%;
+  margin-left: 1.5%;
+  float: left;
+  margin-bottom: 20px;
+ }
+ .card-title{
+  font-weight: bold;
+  font-size: 16px;
+  color: #8e210b;
+ }
+    .card-image{
+      height: 200px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  .card-text{
+    font-size: 10px;
+
+  }
+}

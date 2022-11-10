@@ -9,13 +9,9 @@ import { faRegistered} from '@fortawesome/free-regular-svg-icons';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'cibando';
-  iconaHome = faHouzz;
-  iconaScheda = faNewspaper;
-  iconaMail = faMailBulk;
-  iconaRegistrati = faRegistered;
-  evidenziato = false;
-  onEvidenziazione(){
-    this.evidenziato = !this.evidenziato;
-  }
+ // title = 'cibando';
+  //iconaHome = faHouzz;
+  //iconaScheda = faNewspaper;
+  //iconaMail = faMailBulk;
+  //iconaRegistrati = faRegistered;
 }

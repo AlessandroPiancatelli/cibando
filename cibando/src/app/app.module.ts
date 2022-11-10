@@ -7,6 +7,10 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { HomeComponent } from './components/home/home.component';
+import { HeaderComponent } from './shared/header/header.component';
+import { FooterComponent } from './shared/footer/footer.component';
+import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
 
 
 
@@ -16,6 +20,10 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     AppComponent,
     CarouselComponent,
     RecipesComponent,
+    HomeComponent,
+    HeaderComponent,
+    FooterComponent,
+    RecipeCardComponent,
 
   ],
   imports: [
