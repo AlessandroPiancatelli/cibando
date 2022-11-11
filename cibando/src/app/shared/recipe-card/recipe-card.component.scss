@@ -1,7 +1,7 @@
 .container-cards{
  display: block;
- float:left;
- height: 100vh;
+ margin-bottom: 20px;
+ height: 345vh;
  .card{
   width:23%;
   margin-left: 1.5%;
@@ -21,6 +21,10 @@
     }
   .card-text{
     font-size: 10px;
-
+    text-align: justify;
+  }
+  .btn-primary {
+  background-color:#8e210b;
+  border-color: #8e210b;
   }
 }
