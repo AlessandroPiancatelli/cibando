@@ -1,4 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Recipe } from 'src/app/models/recipe.model';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-home',
@@ -8,11 +10,18 @@ import { Component, OnDestroy, OnInit } from '@angular/core';
 export class HomeComponent implements OnInit, OnDestroy {
 
   evidenziato = false;
+  ricette: Recipe[] = [];
+  constructor(private recipeService: RecipeService) { }
 
-  constructor() { }
-
-  ngOnInit(): void {
-    console.log('qui siamo nella home')
+  ngOnInit(): void {this.recipeService.getRecipes().subscribe({
+    next: (res) => {
+      this.ricette = res;
+      this.ricette = this.ricette.sort((a,b)=> b._id - a._id).slice(0,4);
+    },
+    error: (err) => {
+      console.error(err);
+    }
+  })
   }
   ngOnDestroy(): void {
     console.log('sei uscito dalla home')

@@ -31,3 +31,20 @@
   font-weight: bold;
   padding-left: 20px;
 }
+
+.difficolta{
+  width: 160px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
+
+.errore{
+  display: flex;
+  width: max-content;
+  height: 400px;
+  align-content: space-around;
+  flex-wrap: wrap;
+  margin-left: 500px;
+  font-weight: 900;
+}

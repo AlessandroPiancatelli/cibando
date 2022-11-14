@@ -10,6 +10,7 @@ import { Recipe } from 'src/app/models/recipe.model';
 export class RecipesListComponent implements OnInit {
 
   ricette: Recipe[] = [];
+  titoloRicevuto: string = '';
 
   constructor(private recipeService: RecipeService ) { }
 
@@ -23,5 +24,11 @@ export class RecipesListComponent implements OnInit {
       }
     })
   }
-
+  riceviTitolo(e:any){
+    if(this.titoloRicevuto===''){
+    this.titoloRicevuto=e;
+    } else {
+      this.titoloRicevuto = '';
+    }
+  }
 }

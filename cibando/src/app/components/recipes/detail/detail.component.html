@@ -1,7 +1,17 @@
-<img src="{{ricetta.image}}" class="img-fluid" alt="Responsive image">
-<p class="h1">{{ricetta.title}}</p>
-<p class="text-justify">{{ricetta.description}}</p>
-<p class="h5">Difficoltà:</p>
-<br>
-<br>
-<p class="h6">Ricetta pubblicata il {{ricetta.date}}</p>
+ <div *ngIf="ricetta">
+  <div>
+    <img src="{{ricetta.image}}" class="img-fluid" alt="Responsive image">
+    <p class="h1">{{ricetta.title}}</p>
+    <p class="text-justify">{{ricetta.description}}</p>
+    <p class="h5">Difficoltà:</p>
+      <div class="row">
+        <img class="difficolta" [src]="percorsoDifficolta + ricetta?.difficulty + '.png'" alt="difficoltà">
+      </div>
+    <br>
+    <br>
+    <p class="h6">Ricetta pubblicata il {{ricetta.date | date}}</p>
+  </div>
+ </div>
+ <div *ngIf="!ricetta">
+    <p class="errore">Questa ricetta Non Esiste o è stata cancellata , clicca qui per tornare indietro </p>
+ </div>

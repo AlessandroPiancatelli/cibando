@@ -13,6 +13,7 @@ import { FooterComponent } from './shared/footer/footer.component';
 import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component';
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
+import { ErrorComponent } from './components/error/error.component';
 
 
 
@@ -28,6 +29,7 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
     RecipeCardComponent,
     DetailComponent,
     RecipesListComponent,
+    ErrorComponent,
 
   ],
   imports: [
