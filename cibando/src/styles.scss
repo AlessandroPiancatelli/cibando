@@ -20,6 +20,9 @@ body{
 footer{
   height: 100px;
   width: 100%;
+  position:relative;
+  bottom: 0px;
+  clear:both;
   background-color: #8e210b !important;
 }
 // .Immagine-Singola{
@@ -57,5 +60,19 @@ ngb-carousel.carousel.slide{
       }
     }
 }
+
+.p-password{
+  display: block !important;
+}
+
+.p-inputtext{
+  width: 100% !important;
+}
+
+.p-password-input{
+  width: 100% !important;
+}
+
+
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

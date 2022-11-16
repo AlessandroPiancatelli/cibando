@@ -1,7 +1,8 @@
 .container-cards{
  display: block;
  margin-bottom: 20px;
- height: 345vh;
+ float:left;
+
  .card{
   width:23%;
   margin-left: 1.5%;
@@ -22,6 +23,7 @@
   .card-text{
     font-size: 10px;
     text-align: justify;
+    margin-bottom: 5px;
   }
   .btn-primary {
   background-color:#8e210b;
@@ -29,10 +31,19 @@
   }
 
   .difficolta{
-    width: 120px;
+    width: 28%;
+    height: 28%;
+
     // margin-top: 10px;
-    margin-bottom: 0px;
-    margin-left: 80px;
   }
 
+  .cont-difficolta{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top: 10px;
+  }
+  .card-body{
+    padding-bottom: 0px;
+  }
 }

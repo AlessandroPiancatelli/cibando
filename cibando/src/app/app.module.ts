@@ -3,6 +3,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { AppRoutingModule } from './app-routing.module';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { PasswordModule } from "primeng/password";
+import { DividerModule } from "primeng/divider";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -14,6 +19,7 @@ import { RecipeCardComponent } from './shared/recipe-card/recipe-card.component'
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { ErrorComponent } from './components/error/error.component';
+import { RegistrationComponent } from './user/registration/registration.component';
 
 
 
@@ -30,13 +36,18 @@ import { ErrorComponent } from './components/error/error.component';
     DetailComponent,
     RecipesListComponent,
     ErrorComponent,
-
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FontAwesomeModule,
-    NgbModule
+    NgbModule,
+    FormsModule,
+    ReactiveFormsModule,
+    PasswordModule,
+    DividerModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

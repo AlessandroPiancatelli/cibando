@@ -1,5 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { toJSDate } from '@ng-bootstrap/ng-bootstrap/datepicker/ngb-calendar';
 import { Recipe } from 'src/app/models/recipe.model';
+import { RecipeService } from 'src/app/services/recipe.service';
 
 @Component({
   selector: 'app-recipe-card',
@@ -8,13 +10,28 @@ import { Recipe } from 'src/app/models/recipe.model';
 })
 export class RecipeCardComponent implements OnInit {
   percorsoDifficolta = "../../../../assets/images/difficolta-"
-  @Input() recipes: Recipe[];
+
+  recipes: Recipe[] = [];
+
+  @Input() origine:string;
 
   @Output() messaggio = new EventEmitter();
 
-  constructor() { }
+  constructor(private recipeService: RecipeService) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void {this.recipeService.getRecipes().subscribe({
+    next: (res) => {
+      this.recipes = res;
+      if(this.origine=='home'){
+       this.recipes = this.recipes.sort((a,b)=> b._id - a._id).slice(0,4);
+      } else{
+        this.recipes = this.recipes.sort((a,b)=> a._id - b._id)
+      }
+    },
+    error: (err) => {
+      console.error(err);
+    }
+  })
 
   }
 

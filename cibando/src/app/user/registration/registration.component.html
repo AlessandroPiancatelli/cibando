@@ -1,0 +1,88 @@
+<!-- <div class="registration-module">
+ <form class="mx-md-4" #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+  <div class="col-1">
+    <h2 style="font-weight: bold; text-align: center; margin-top:100px; margin-bottom: 30px;">Registrati</h2>
+    <div class="mb-3">
+      <input type="nome" class="form-control" id="exampleFormControlInput1" placeholder="scrivi il tuo nome" name="nome" ngModel>
+      <label for="exampleFormControlInput1" class="form-label">Il tuo nome</label>
+    </div>
+    <div class="mb-3">
+      <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="email" name="email" ngModel>
+      <label for="exampleFormControlInput2" class="form-label">La tua email</label>
+    </div>
+    <div class="mb-3">
+      <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="password" name="password" ngModel>
+      <label for="exampleFormControlInput3" class="form-label">Password</label>
+    </div>
+    <div class="mb-3">
+      <input type="password" class="form-control" id="exampleFormControlInput4" placeholder="" name="ripeti-password" ngModel>
+      <label for="exampleFormControlInput4" class="form-label">Ripeti password</label>
+    </div>
+    <div class="form-check">
+      <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+      <label class="form-check-label" for="flexCheckDefault">
+        Dichiaro di accetare i <a href="#">Termini del servizio</a>
+      </label>
+    </div>
+    <button type="submit" class="btn btn-secondary" style="background-color: brown; margin-left: 205px; margin-top: 50px;">Registrati</button>
+  </div>
+  <div class="col-2">
+    <div class="contenitore-immagine" style="margin-top: 157px;">
+      <img style ="height: 450px; width: 100%; object-fit: cover; border-radius:20px; border-top-right-radius: 0px; border-bottom-right-radius: 0px;" src="https://wips.plug.it/cips/buonissimo.org/cms/2019/07/costine-miele.jpg">
+    </div>
+  </div>
+ </form>
+</div> -->
+
+<div class="registration-module">
+   <!--FORMGROUP - FORM CONTROL-->
+   <div class="col-6 px-5" style="float:left">
+    <form class="mx-md-4" [formGroup]="form" (ngSubmit)="onSubmit()">
+     <h2 style="font-weight: bold; text-align: center; margin-top:100px; margin-bottom: 30px;">Registrati</h2>
+     <div class="mb-3">
+       <input type="nome" class="form-control" id="exampleFormControlInput1" placeholder="scrivi il tuo nome" name="nome" formControlName="name">
+       <label for="exampleFormControlInput1" class="form-label">Il tuo nome</label>
+       <p class="help is-danger" *ngIf="form.controls['name'].hasError('minlength')" >Il campo nome deve contenere almeno 3 caratteri </p>
+       <p class="help is-danger" *ngIf="!form.controls.name.valid && form.get('name').touched" >Il campo è obbligatorio</p>
+     </div>
+     <div class="mb-3">
+       <input type="email" class="form-control" id="exampleFormControlInput2" placeholder="email" name="email" formControlName="email" >
+       <label for="exampleFormControlInput2" class="form-label">La tua email</label>
+       <p class="help is-danger" *ngIf="form.controls['email'].hasError('email')">Il campo email è scritto male</p>
+       <p class="help is-danger" *ngIf="!form.controls.email.valid && form.get('email').touched">Il campo è obbligatorio</p>
+     </div>
+     <div class="mb-3">
+       <!-- <input type="password" class="form-control" id="exampleFormControlInput3" placeholder="password" name="password" formControlName="password"> -->
+       <p class="help is-danger" *ngIf="form.controls['password'].hasError('pattern')">Il campo password deve contenere: 1 Maiuscola, 1 Minuscola , 1 numero ed un carattere speciale</p>
+       <p class="help is-danger" *ngIf="!form.get('password')?.valid && form.get('password').touched">Il campo è obbligatorio</p>
+       <p-password [toggleMask]="true" class="form-control" formControlName="password" ></p-password>
+       <label for="exampleFormControlInput3" class="form-label">Password</label>
+     </div>
+     <div class="mb-3">
+       <input type="password" class="form-control" id="exampleFormControlInput4" placeholder="" name="ripetiPassword" formControlName="ripetiPassword">
+       <label for="exampleFormControlInput4" class="form-label">Ripeti password</label>
+       <p class="help is-danger" *ngIf="convalidaPassword">La passowrd inserita è diversa</p>
+       <p class="help is-danger" *ngIf="!form.get('ripetiPassword')?.valid && form.get('ripetiPassword').touched">Il campo  è obbligatorio</p>
+     </div>
+     <div class="form-check">
+       <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" name="accetto" formControlName="accetto">
+       <label class="form-check-label" for="flexCheckDefault">
+         Dichiaro di accetare i <a href="#">Termini del servizio</a>
+       </label>
+       <p class="help is-danger" *ngIf="!form.get('accetto')?.valid && form.get('accetto').touched">Il campo  è obbligatorio</p>
+     </div>
+        <div class="contenitore-form-correct" *ngIf="form.valid">
+          <p style="margin-top: 11px;"class="help correct" >il form è corretto</p>
+        </div>
+        <div class="button-container">
+          <button type="submit" class="btn btn-secondary" style="background-color: brown;" [disabled]="!form.valid">Registrati</button>
+        </div>
+    </form>
+    </div>
+   <div class="col-6 px-0" style="height: 100%; float: right">
+     <!-- <div class="contenitore-immagine" style="margin-top: 157px;"> -->
+       <img class="immagine-destra" src="https://wips.plug.it/cips/buonissimo.org/cms/2019/07/costine-miele.jpg">
+     <!-- </div> -->
+   </div>
+
+ </div>
