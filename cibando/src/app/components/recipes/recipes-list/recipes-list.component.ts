@@ -1,4 +1,5 @@
 import { RecipeService } from 'src/app/services/recipe.service';
+import { SearchService } from 'src/app/services/search.service';
 import { Component, OnInit } from '@angular/core';
 import { Recipe } from 'src/app/models/recipe.model';
 
@@ -11,8 +12,9 @@ export class RecipesListComponent implements OnInit {
 
   ricette: Recipe[] = [];
   titoloRicevuto: string = '';
+  messaggioRicerca:string;
 
-  constructor(private recipeService: RecipeService ) { }
+  constructor(private recipeService: RecipeService, private searchService: SearchService ) { }
 
   ngOnInit(): void {
     this.recipeService.getRecipes().subscribe({
@@ -23,6 +25,7 @@ export class RecipesListComponent implements OnInit {
         console.error(err);
       }
     })
+    this.riceviRicerca();
   }
   riceviTitolo(e:any){
     if(this.titoloRicevuto===''){
@@ -30,5 +33,14 @@ export class RecipesListComponent implements OnInit {
     } else {
       this.titoloRicevuto = '';
     }
+  }
+
+  riceviRicerca(){
+    this.searchService.parolaRicercata.subscribe((res:any)=> {
+      //recuper i dati dalla subject e li immagazzino nelle local storage
+      // localStorage.setItem('nome', res.nome);
+      // localStorage.setItem('email', res.email);
+      this.messaggioRicerca = res;
+    });
   }
 }

@@ -25,3 +25,40 @@ header {
     margin-right: 45px;
 }
 }
+
+
+@media only screen and (min-width: 650px) and (max-width: 992px){
+  #barra-di-ricerca{
+    margin-left: 0% !important;
+  }
+  #icona-ricerca{
+    margin-top: 10px !important;
+  }
+  .pi-search{
+    margin-left: 9px !important;
+  }
+}
+
+@media only screen and (min-width: 481px) and (max-width: 649px){
+  #barra-di-ricerca{
+    margin-left: 0% !important;
+  }
+  #icona-ricerca{
+    margin-top: 10px !important;
+  }
+  .pi-search{
+    margin-left: 9px !important;
+  }
+}
+
+@media only screen and (min-width: 0px) and (max-width: 480px){
+  #barra-di-ricerca{
+    margin-left: 0% !important;
+  }
+  #icona-ricerca{
+    margin-top: 10px !important;
+  }
+  .pi-search{
+    margin-left: 9px !important;
+  }
+}

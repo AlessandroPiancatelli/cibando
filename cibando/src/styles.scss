@@ -72,7 +72,17 @@ ngb-carousel.carousel.slide{
 .p-password-input{
   width: 100% !important;
 }
+.pagination {
+  --bs-pagination-color: #8e210b !important;
+  --bs-pagination-hover-color: #8e210b !important;
+  --bs-pagination-focus-color: #8e210b !important;
+  --bs-pagination-active-bg: #8e210b !important;
+  --bs-pagination-active-border-color: #8e210b !important;
+}
 
+.navbar-toggler{
+  margin-right: 10px;
+}
 
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

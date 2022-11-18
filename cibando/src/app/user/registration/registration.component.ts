@@ -1,6 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { CustomValidators } from './customValidator';
+import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-registration',
   templateUrl: './registration.component.html',
@@ -21,7 +24,7 @@ export class RegistrationComponent implements OnInit {
   get convalidaPassword(){
     return(this.form.getError('mismatch') && this.form.get('ripetiPassword').touched)
   }
-  constructor() { }
+  constructor(private userService:UserService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -32,5 +35,8 @@ export class RegistrationComponent implements OnInit {
 
   onSubmit(){
     console.log(this.form);
+    const utente = {nome: this.form.value.name , email: this.form.value.email};
+    this.userService.datiUtente.next(utente);
+    this.router.navigate(["home"])
   }
 }

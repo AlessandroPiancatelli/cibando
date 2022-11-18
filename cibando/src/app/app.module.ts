@@ -8,6 +8,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { PasswordModule } from "primeng/password";
 import { DividerModule } from "primeng/divider";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -47,7 +48,8 @@ import { RegistrationComponent } from './user/registration/registration.componen
     ReactiveFormsModule,
     PasswordModule,
     DividerModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    NgbCollapseModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,4 +1,6 @@
-<app-carousel></app-carousel>
+<div id="prova">
+  <app-carousel id="carousel"></app-carousel>
+</div>
 <section id="main-container">
   <div class="container-title">
     <h2 [ngClass]="evidenziato ? 'testo-evidenziato' : '' " (click)="onEvidenziazione()" style ="cursor:pointer;">Benvenuti nella Cibando App</h2>
@@ -8,5 +10,23 @@
   </div>
   </section>
   <h2 class="ultimericette"> Le Ultime Ricette </h2>
-  <app-recipe-card [origine]="'home'"></app-recipe-card>
+  <app-recipe-card [origine]="'home'" id="recipe-card"></app-recipe-card>
 
+
+
+
+
+  <!-- MODALE DELLA REGISTRAZIONE -->
+<ng-template [ngIf]="nome">
+  <div>
+    <div id="dati-utente">
+      <h2> Grazie {{nome}} per esserti registrto , ecco il riepilogo dei tuoi dati:</h2>
+      <ul>
+        <li>Nome: <strong>{{nome}}</strong></li>
+        <li>Email:<strong>{{email}}</strong> </li>
+
+      </ul>
+      <button class="btn btn-primary" style="background-color: #8e210b; border-color: #8e210b;" (click)="closeModal()"> CHIUDI</button>
+    </div>
+  </div>
+</ng-template>

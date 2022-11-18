@@ -4,11 +4,11 @@
       <img src="../assets/images/icona-cibando.png" class="logo" alt="logo cibando">
       <span>Cibando</span>
     </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" (click)="isCollapsed=!isCollapsed">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
+    <div class="collapse navbar-collapse" id="navbarNav" [ngbCollapse]="isCollapsed" >
+      <ul class="navbar-nav" style = "width: 100%;">
         <li class="nav-item active">
           <a class="nav-link" routerLink="home">
             <fa-icon [icon]="iconaHome"></fa-icon>
@@ -29,6 +29,17 @@
             <fa-icon [icon]="iconaRegistrati"></fa-icon>
             Registrati</a>
         </li>
+        <li class="nav-item" style="margin-left: auto;" id="barra-di-ricerca">
+          <a class="nav-link">
+            <input type="text" style="border-radius: 5px; border:none; float:left"  [(ngModel)]="msg" >
+          </a>
+        </li>
+        <li style="margin-right: 20px;" id="icona-ricerca">
+          <a class="nav-link" style="width: 40px;height: 40px;border: solid;border-radius: 20px;padding-top: 6px;padding-right: 6px;" (click)="prendiTesto()">
+            <i class="pi pi-search" style="margin-left: 1px;"></i>
+          </a>
+        </li>
+
       </ul>
     </div>
   </nav>
