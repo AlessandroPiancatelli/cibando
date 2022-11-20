@@ -6,11 +6,13 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
 import { DetailComponent } from './components/recipes/detail/detail.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'errore',component:ErrorComponent},
+  {path:'contatti', component:ContactsComponent},
   {path:'registration', component:RegistrationComponent },
   {path:'ricette', component:RecipesComponent, children:[
     {path:'dettaglio/:title/:_id', component:DetailComponent},

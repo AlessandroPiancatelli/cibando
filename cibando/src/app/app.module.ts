@@ -21,6 +21,7 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { RecipesListComponent } from './components/recipes/recipes-list/recipes-list.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RegistrationComponent } from './user/registration/registration.component';
+import { ContactsComponent } from './components/contacts/contacts.component';
 
 
 
@@ -37,7 +38,8 @@ import { RegistrationComponent } from './user/registration/registration.componen
     DetailComponent,
     RecipesListComponent,
     ErrorComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ContactsComponent
   ],
   imports: [
     BrowserModule,
