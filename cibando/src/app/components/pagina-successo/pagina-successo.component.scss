@@ -1,0 +1,115 @@
+
+  //  display: block;
+  //  margin-bottom: 20px;
+  //  float:left;
+
+   .card{
+    width:100%;
+    margin-left: 1.5%;
+    float: left;
+    margin-bottom: 20px;
+   }
+   .card-title{
+    font-weight: bold;
+    font-size: 16px;
+    color: #8e210b;
+   }
+      .card-image{
+        height: 200px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    .card-text{
+      font-size: 10px;
+      text-align: justify;
+      margin-bottom: 5px;
+    }
+    .btn-primary {
+    background-color:#8e210b;
+    border-color: #8e210b;
+    }
+
+    .difficolta{
+      width: 28%;
+      height: 28%;
+
+      // margin-top: 10px;
+    }
+
+    .cont-difficolta{
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      margin-top: 10px;
+    }
+    .card-body{
+      padding-bottom: 0px;
+    }
+    .container-pagination{
+      float: left;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-content: center;
+      align-items: center;
+      width: 100%;
+  }
+  .titolo{
+    display: flex;
+  justify-content: center;
+  font-family: "Homemade Apple", cursive;
+  font-size: 30px;
+  }
+  .titolino{
+    display: flex;
+    justify-content: center;
+  }
+  .label{
+    display: flex;
+    justify-content: center;
+  }
+
+  .cont-difficolta-2{
+    width: 28%;
+    height: 28%;
+    float:left;
+    // margin-top: 10px;
+  }
+  .contenitore-immagine{
+    float:left;
+  }
+  .contenitore{
+      clear: both;
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
+      align-items: center;
+
+  }
+  .cerchio-logo{
+    width: 141px;
+    height: 141px;
+    border: 4px solid black;
+    display: flex;
+    border-radius: 250px;
+    background-color: #8e210b;
+  }
+.contenitore-globale{
+  width:74%;
+  border: 3px solid #8e210b;
+  margin: auto;
+  margin-bottom: 20px;
+  border-radius: 71px;
+  background-color: lightgrey;
+}
+
+.gigacontenitore{
+  background-image: url("https://syscoireland.com/wp-content/uploads/2019/03/banner-blog.jpg");
+  margin-top: -20px;
+  margin-bottom: -19px;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

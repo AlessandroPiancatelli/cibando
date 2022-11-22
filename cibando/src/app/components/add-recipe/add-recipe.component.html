@@ -1,0 +1,49 @@
+<div class="gigacontenitore" style="margin-top:-19px ; margin-bottom: -19px;padding-top: 20px;padding-bottom: 20px;">
+
+<div class="contenitore" style="">
+  <h1 class="h1">Aggiungiamo una nuova ricetta!</h1>
+    <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
+      <div class="form-group" >
+        <label for="exampleInputEmail1"> <strong>Titolo:</strong></label>
+        <input type="email" class="form-control" id="Titolo" aria-describedby="emailHelp" placeholder="Titolo" formControlName="title">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <!-- <div class="form-group">
+        <label for="exampleInputEmail1">Descrizione</label>
+        <input type="email" class="form-control" id="Descrizione" aria-describedby="emailHelp" placeholder="Descrizione" formControlName="descrizione">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div> -->
+      <div class="input-group">
+        <div class="input-group-prepend">
+          <span class="input-group-text"><strong>Descrizione:</strong></span>
+        </div>
+        <textarea class="form-control" aria-label="With textarea" formControlName="description"></textarea>
+      </div>
+      <div class="form-group">
+        <label for="exampleInputEmail1"><strong>Immagine:</strong></label>
+        <input type="email" class="form-control" id="UrlImmagine" aria-describedby="emailHelp" placeholder="Url Immagine" formControlName="image">
+        <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+      </div>
+      <!-- <div class="form-group">
+        <label for="exampleInputEmail1">Difficoltà</label>
+        <input type="email" class="form-control" id="Difficolta" aria-describedby="emailHelp" placeholder="Difficolta" formControlName="difficolta">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div> -->
+      <div class="form-group">
+        <label for="exampleFormControlSelect1" style="width: 100%;text-align: center;"><strong>Difficoltà:</strong></label>
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="difficulty" style="width: 20%; margin: auto;">
+          <option>1</option>
+          <option>2</option>
+          <option>3</option>
+          <option>4</option>
+          <option>5</option>
+        </select>
+      </div>
+      <div class="form-check" style="display: flex;flex-direction: row;justify-content: center;">
+        <input type="checkbox" class="form-check-input" id="pubblicato" formControlName="published">
+        <label class="form-check-label" for="exampleCheck1">Pubblicata</label>
+      </div>
+      <button type="submit" class="btn btn-primary" [disabled]="!form.valid">Submit</button>
+    </form>
+</div>
+</div>

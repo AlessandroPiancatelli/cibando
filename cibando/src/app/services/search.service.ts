@@ -5,5 +5,6 @@ import { ReplaySubject } from 'rxjs';
 })
 export class SearchService {
   parolaRicercata = new ReplaySubject();
+  NomeRicettaCreata = new ReplaySubject();
   constructor() { }
 }

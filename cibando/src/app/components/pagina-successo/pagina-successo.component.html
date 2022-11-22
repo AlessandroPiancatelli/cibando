@@ -1,0 +1,33 @@
+<div class="gigacontenitore">
+<div class="contenitore-globale">
+       <div class="contenitore-descrizione" style ="float:left; width:95% ; margin:2.5%">
+          <h1 class="titolo">Congratulazioni per aver creato una nuova ricetta</h1>
+          <h4 class="titolino"> Ecco come apparità tra le altre ricette </h4>
+       </div>
+      <div class="contenitore">
+       <div class="cerchio-logo">
+        <a href="/ricette" style ="width: 100%;height: 100%;display: contents;"><i class="pi pi-backward" style="font-size: 5rem; margin: auto; color: wheat;"></i></a>
+       </div>
+       <div class="card-contenitore" style="width:33%" >
+          <div class="card"   style="float:left; ">
+            <div class="card-image" [ngStyle]=" {'background-image': 'url('+image+')'}" ></div>
+            <div class="card-body">
+              <h5 class="card-title">{{title}}</h5>
+              <p class="card-text">{{description | slice: 0 :250}}...</p>
+              <div class="cont-difficolta">
+                <h6 style="float:left;">Difficoltà:</h6>
+                <img class="difficolta" [src]="percorsoDifficolta + difficulty + '.png'" alt="difficoltà">
+              </div>
+              <!-- <a routerLink="/ricette/dettaglio/{{recipe.title}}/{{recipe._id}}" class="btn btn-primary" style="float: left;" >Visualizza</a> -->
+              <!--    [routerLink]="'dettaglio/'+recipe.title+'/'+recipe.id"-->
+            </div>
+            <a  class="btn btn-primary" style="border-top-left-radius: 0px;
+            border-top-right-radius: 0px;" >Visualizza</a>
+          </div>
+        </div>
+        <div class="cerchio-logo" >
+          <a href="/AggiungiRicetta" style ="width: 100%;height: 100%;display: contents;"><i class="pi pi-plus" style="font-size: 5rem; margin: auto; color: wheat;"></i></a>
+        </div>
+      </div>
+</div>
+</div>

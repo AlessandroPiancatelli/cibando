@@ -17,7 +17,8 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   constructor(private recipeService: RecipeService, private userService:UserService) { }
 
-  ngOnInit(): void {this.recipeService.getRecipes().subscribe({
+  ngOnInit(): void {
+    this.recipeService.getRecipes().subscribe({
     next: (res) => {
       this.ricette = res;
       this.ricette = this.ricette.sort((a,b)=> b._id - a._id).slice(0,4);

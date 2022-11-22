@@ -9,6 +9,8 @@ import { PasswordModule } from "primeng/password";
 import { DividerModule } from "primeng/divider";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
+import { AccordionModule} from 'primeng/accordion';
+import { HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -22,6 +24,9 @@ import { RecipesListComponent } from './components/recipes/recipes-list/recipes-
 import { ErrorComponent } from './components/error/error.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
+import { ChangeColorDirective } from './directives/change-color.directive';
+import { PaginaSuccessoComponent } from './components/pagina-successo/pagina-successo.component';
 
 
 
@@ -39,7 +44,10 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     RecipesListComponent,
     ErrorComponent,
     RegistrationComponent,
-    ContactsComponent
+    ContactsComponent,
+    AddRecipeComponent,
+    ChangeColorDirective,
+    PaginaSuccessoComponent
   ],
   imports: [
     BrowserModule,
@@ -51,7 +59,9 @@ import { ContactsComponent } from './components/contacts/contacts.component';
     PasswordModule,
     DividerModule,
     BrowserAnimationsModule,
-    NgbCollapseModule
+    NgbCollapseModule,
+    AccordionModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]

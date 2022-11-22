@@ -7,12 +7,16 @@ import { DetailComponent } from './components/recipes/detail/detail.component';
 import { ErrorComponent } from './components/error/error.component';
 import { RegistrationComponent } from './user/registration/registration.component';
 import { ContactsComponent } from './components/contacts/contacts.component';
+import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
+import { PaginaSuccessoComponent } from './components/pagina-successo/pagina-successo.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
   {path:'home', component:HomeComponent},
   {path:'errore',component:ErrorComponent},
   {path:'contatti', component:ContactsComponent},
+  {path:'AggiungiRicetta', component: AddRecipeComponent},
+  {path:'successo', component:PaginaSuccessoComponent},
   {path:'registration', component:RegistrationComponent },
   {path:'ricette', component:RecipesComponent, children:[
     {path:'dettaglio/:title/:_id', component:DetailComponent},

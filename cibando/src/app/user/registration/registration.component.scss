@@ -3,7 +3,7 @@
   border-radius:30px;
   margin-left: 150px;
   margin-right: 150px;
-  height: 700px;
+  display:flex;
   margin-bottom: 20px;
 
 
@@ -51,6 +51,7 @@
   display: flex;
   margin-top: 20px;
   justify-content: center;
+  margin-bottom: 20px;
 }
 
 .immagine-destra{
@@ -74,36 +75,48 @@
   .col-6 {
     flex: 0 0 auto;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
   .registration-module{
     margin-left: 100px;
     margin-right: 100px;
   }
+  #col-immagine{
+    width: 0px;
+    height: 0px;
+  }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 649px){
+@media only screen and (min-width: 481px) and (max-width: 650px){
   .col-6 {
     flex: 0 0 auto;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
 
   .registration-module{
     margin-left: 50px;
     margin-right: 50px;
   }
+  #col-immagine{
+    width: 0px;
+    height: 0px;
+  }
 }
 
-@media only screen and (min-width: 0px) and (max-width: 480px){
+@media only screen and (min-width: 0px) and (max-width: 481px){
   .col-6 {
     flex: 0 0 auto;
     width: 100%;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
   }
 
   .registration-module{
     margin-left: 20px;
     margin-right: 20px;
+  }
+  #col-immagine{
+    width: 0px;
+    height: 0px;
   }
 }
