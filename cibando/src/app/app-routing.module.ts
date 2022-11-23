@@ -1,3 +1,4 @@
+
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/home/home.component';
@@ -9,6 +10,7 @@ import { RegistrationComponent } from './user/registration/registration.componen
 import { ContactsComponent } from './components/contacts/contacts.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
 import { PaginaSuccessoComponent } from './components/pagina-successo/pagina-successo.component';
+import { LoginComponent } from './user/login/login.component';
 
 const routes: Routes = [
   {path:'', redirectTo:'home', pathMatch:'full'},
@@ -17,6 +19,7 @@ const routes: Routes = [
   {path:'contatti', component:ContactsComponent},
   {path:'AggiungiRicetta', component: AddRecipeComponent},
   {path:'successo', component:PaginaSuccessoComponent},
+  {path:'login', component:LoginComponent},
   {path:'registration', component:RegistrationComponent },
   {path:'ricette', component:RecipesComponent, children:[
     {path:'dettaglio/:title/:_id', component:DetailComponent},

@@ -24,16 +24,25 @@
             <fa-icon [icon]="iconaMail"></fa-icon>
             Contatti</a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" routerLink="registration">
-            <fa-icon [icon]="iconaRegistrati"></fa-icon>
-            Registrati</a>
+        <li class="nav-item" *ngIf="!authService.isLogged()" style="margin: auto;">
+          <a class="nav-link" routerLink="login">
+            <i class="pi pi-user"></i>
+            Accedi</a>
         </li>
-        <li class="nav-item" style="margin-left:40px">
+        <li class="nav-item" *ngIf="authService.isLogged()">
+            <a class="nav-link" style="float: left; margin-top: 5px;"><i class="pi pi-user"></i> <span class="name">Ciao {{user.name}}</span></a>
+            <a style="margin-top: 10px;" href="#" (click)="logout()"><p style="float:left;margin-top: 12px;margin-bottom: -20px; color: darkorange;font-weight: 800;">ESCI</p></a>
+            <a class="nav-link" routerLink="AggiungiRicetta" *ngIf="user.role=='admin'" style="float:right">
+              <fa-icon [icon]="iconaAggiungiRicetta"></fa-icon>
+              Aggiungi Ricetta</a>
+        </li>
+        <!-- <li class="nav-item" style="margin-left:40px">
+          <div>
           <a class="nav-link" routerLink="AggiungiRicetta">
             <fa-icon [icon]="iconaAggiungiRicetta"></fa-icon>
             Aggiungi Ricetta</a>
-        </li>
+          </div>
+        </li> -->
         <li class="nav-item" style="margin-left: auto;" id="barra-di-ricerca">
           <a class="nav-link">
             <input type="text" style="border-radius: 5px; border:none; float:left"  [(ngModel)]="msg" >

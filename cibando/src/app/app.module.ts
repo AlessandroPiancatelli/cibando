@@ -11,6 +11,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { AccordionModule} from 'primeng/accordion';
 import { HttpClientModule} from '@angular/common/http';
+import {ToastModule} from 'primeng/toast';
 
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -27,6 +28,7 @@ import { ContactsComponent } from './components/contacts/contacts.component';
 import { AddRecipeComponent } from './components/add-recipe/add-recipe.component';
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { PaginaSuccessoComponent } from './components/pagina-successo/pagina-successo.component';
+import { LoginComponent } from './user/login/login.component';
 
 
 
@@ -47,7 +49,8 @@ import { PaginaSuccessoComponent } from './components/pagina-successo/pagina-suc
     ContactsComponent,
     AddRecipeComponent,
     ChangeColorDirective,
-    PaginaSuccessoComponent
+    PaginaSuccessoComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +64,8 @@ import { PaginaSuccessoComponent } from './components/pagina-successo/pagina-suc
     BrowserAnimationsModule,
     NgbCollapseModule,
     AccordionModule,
-    HttpClientModule
+    HttpClientModule,
+    ToastModule
   ],
   providers: [],
   bootstrap: [AppComponent]
