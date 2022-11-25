@@ -44,7 +44,7 @@ export class RegistrationComponent implements OnInit {
       error:(err) => {
         console.log(err)
       }
-    })
+    });
     this.router.navigate(["home"])
   }
 }

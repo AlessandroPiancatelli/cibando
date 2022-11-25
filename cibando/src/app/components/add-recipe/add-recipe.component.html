@@ -17,7 +17,7 @@
         <div class="input-group-prepend">
           <span class="input-group-text"><strong>Descrizione:</strong></span>
         </div>
-        <textarea class="form-control" aria-label="With textarea" formControlName="description"></textarea>
+        <ckeditor [editor]="editor" [config]="editorConfig" class="form-control description" aria-label="With textarea" formControlName="description"></ckeditor>
       </div>
       <div class="form-group">
         <label for="exampleInputEmail1"><strong>Immagine:</strong></label>

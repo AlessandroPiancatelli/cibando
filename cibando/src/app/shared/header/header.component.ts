@@ -1,10 +1,10 @@
+import { RecipeService } from './../../services/recipe.service';
 
 import { Component, OnInit,DoCheck } from '@angular/core';
 import { faNewspaper } from '@fortawesome/free-regular-svg-icons';
 import { faAdd, faMailBulk } from '@fortawesome/free-solid-svg-icons';
 import { faHouzz } from '@fortawesome/free-brands-svg-icons';
 import { faRegistered} from '@fortawesome/free-regular-svg-icons';
-import { SearchService } from 'src/app/services/search.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { Router } from '@angular/router';
 
@@ -26,7 +26,7 @@ user: any;
   msg:string;
   test:string;
 
-  constructor(private searchService:SearchService, public authService:AuthService, private router:Router) { }
+  constructor(private recipeService:RecipeService, public authService:AuthService, private router:Router) { }
 
   ngOnInit(): void {
   }
@@ -42,6 +42,7 @@ user: any;
     this.router.navigate(['/login'])
   }
   prendiTesto(){
-   this.searchService.parolaRicercata.next(this.msg);
+   this.recipeService.cerca.next(this.msg);
+   this.router.navigate(['ricette/result'])
   }
 }

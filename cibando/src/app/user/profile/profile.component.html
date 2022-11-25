@@ -1,0 +1,21 @@
+<section *ngIf="this.user">
+<h2>Ciao {{this.user.name}}</h2>
+<h3>Ecco il riepilogo dei tuoi dati</h3>
+<ul>
+  <li>
+    <strong>Nome:</strong>{{this.user.name}}
+  </li>
+  <li>
+    <strong>email:</strong>{{this.user.email}}
+  </li>
+  <li>
+    <strong>Ruolo:</strong>{{this.user.role}}
+  </li>
+  <li>
+    <strong>Iscritto dal:</strong>{{dataRegistrazione}}
+  </li>
+  <li>
+    <strong>Ultimo aggiornamento:</strong>{{dataUpdate}}
+  </li>
+</ul>
+</section>

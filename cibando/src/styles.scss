@@ -84,5 +84,9 @@ ngb-carousel.carousel.slide{
   margin-right: 10px;
 }
 
+.description .ck-editor__editable {
+  min-height: 250px !important;
+  max-height: 250px !important;
+}
 /* Importing Bootstrap SCSS file. */
 @import '~bootstrap/scss/bootstrap';

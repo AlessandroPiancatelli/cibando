@@ -12,6 +12,8 @@ import { NgbCollapseModule } from '@ng-bootstrap/ng-bootstrap';
 import { AccordionModule} from 'primeng/accordion';
 import { HttpClientModule} from '@angular/common/http';
 import {ToastModule} from 'primeng/toast';
+import { CKEditorModule } from '@ckeditor/ckeditor5-angular';
+
 
 import { AppComponent } from './app.component';
 import { CarouselComponent } from './components/carousel/carousel.component';
@@ -29,6 +31,9 @@ import { AddRecipeComponent } from './components/add-recipe/add-recipe.component
 import { ChangeColorDirective } from './directives/change-color.directive';
 import { PaginaSuccessoComponent } from './components/pagina-successo/pagina-successo.component';
 import { LoginComponent } from './user/login/login.component';
+import { ProfileComponent } from './user/profile/profile.component';
+import { VideoComponent } from './components/video/video.component';
+import { ResultComponent } from './components/recipes/result/result.component';
 
 
 
@@ -50,7 +55,10 @@ import { LoginComponent } from './user/login/login.component';
     AddRecipeComponent,
     ChangeColorDirective,
     PaginaSuccessoComponent,
-    LoginComponent
+    LoginComponent,
+    ProfileComponent,
+    VideoComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
@@ -65,7 +73,8 @@ import { LoginComponent } from './user/login/login.component';
     NgbCollapseModule,
     AccordionModule,
     HttpClientModule,
-    ToastModule
+    ToastModule,
+    CKEditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

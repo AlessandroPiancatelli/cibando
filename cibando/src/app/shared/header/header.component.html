@@ -29,13 +29,26 @@
             <i class="pi pi-user"></i>
             Accedi</a>
         </li>
-        <li class="nav-item" *ngIf="authService.isLogged()">
+        <!-- <li class="nav-item" *ngIf="authService.isLogged()">
             <a class="nav-link" style="float: left; margin-top: 5px;"><i class="pi pi-user"></i> <span class="name">Ciao {{user.name}}</span></a>
             <a style="margin-top: 10px;" href="#" (click)="logout()"><p style="float:left;margin-top: 12px;margin-bottom: -20px; color: darkorange;font-weight: 800;">ESCI</p></a>
             <a class="nav-link" routerLink="AggiungiRicetta" *ngIf="user.role=='admin'" style="float:right">
               <fa-icon [icon]="iconaAggiungiRicetta"></fa-icon>
               Aggiungi Ricetta</a>
+        </li> -->
+      <ul class="navbar-nav">
+        <li class="nav-item" *ngIf="authService.isLogged()">
+          <a class="nav-link" style="float: left; margin-top: 5px;"> <span class="name" style="float:left">Ciao {{user.name}}</span></a>
+          <a class="nav-link" style="float: left; margin-top: 5px;" href="profilo"><i class="pi pi-user" style="float:left;" ></i> <span class="name" style="float:left">profilo</span></a>
+          <!-- <a href="profilo"> profilo</a> -->
+          <a style="margin-top: 10px;" href="#" (click)="logout()"><p style="float:left;margin-top: 12px;margin-bottom: -20px; color: darkorange;font-weight: 800;">ESCI</p></a>
         </li>
+        <li>
+          <a class="nav-link" routerLink="AggiungiRicetta" *ngIf="user?.role=='admin'" style="float:right">
+            <fa-icon [icon]="iconaAggiungiRicetta"></fa-icon>
+            Aggiungi Ricetta</a>
+        </li>
+      </ul>
         <!-- <li class="nav-item" style="margin-left:40px">
           <div>
           <a class="nav-link" routerLink="AggiungiRicetta">
@@ -49,7 +62,7 @@
           </a>
         </li>
         <li style="margin-right: 20px;" id="icona-ricerca">
-          <a class="nav-link" style="width: 40px;height: 40px;border: solid;border-radius: 20px;padding-top: 6px;padding-right: 6px;" (click)="prendiTesto()">
+          <a class="nav-link" style="width: 40px;height: 40px;border: solid;border-radius: 20px;padding-top: 6px;padding-right: 6px;" (click)="prendiTesto()" >
             <i class="pi pi-search" style="margin-left: 1px;"></i>
           </a>
         </li>

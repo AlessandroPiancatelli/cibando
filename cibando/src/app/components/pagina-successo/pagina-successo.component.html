@@ -13,7 +13,8 @@
             <div class="card-image" [ngStyle]=" {'background-image': 'url('+image+')'}" ></div>
             <div class="card-body">
               <h5 class="card-title">{{title}}</h5>
-              <p class="card-text">{{description | slice: 0 :250}}...</p>
+              <!-- <p class="card-text">{{description | slice: 0 : 250}}...</p> -->
+              <p class="card-text"><span [innerHTML]="description | slice: 0 : 250"></span></p>
               <div class="cont-difficolta">
                 <h6 style="float:left;">Difficoltà:</h6>
                 <img class="difficolta" [src]="percorsoDifficolta + difficulty + '.png'" alt="difficoltà">

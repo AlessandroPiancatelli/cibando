@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from '../models/recipe.model';
 import { RECIPES } from '../mocks/recipes.mock';
-import { Observable, of } from 'rxjs'; //l'of nasce per lavorare sui file moc
+import { Observable, of, ReplaySubject } from 'rxjs'; //l'of nasce per lavorare sui file moc
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
@@ -9,7 +9,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class RecipeService {
   apiBaseUrl="/api/recipes";
-
+  cerca = new ReplaySubject();
   constructor(private http:HttpClient) {
 
   }
@@ -36,7 +36,11 @@ export class RecipeService {
     return this.http.get<Recipe>(`${this.apiBaseUrl}/${id}`)
   }
 
-  saveRecipe(body:any) :Observable<any>{
+  saveRecipe(body:Recipe) :Observable<Recipe>{
     return this.http.post<Recipe>(`/api/recipes/`,body)
+  }
+
+  searchRecipe(text:string): Observable<Recipe[]> {
+    return this.http.get<Recipe[]>(`${this.apiBaseUrl}/cerca/${text}`)
   }
 }

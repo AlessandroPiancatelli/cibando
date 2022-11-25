@@ -3,18 +3,60 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RecipeService } from 'src/app/services/recipe.service';
 import { SearchService } from 'src/app/services/search.service';
 import { Router } from '@angular/router';
+import * as ClassicEditor from '@ckeditor/ckeditor5-build-classic'
+
 @Component({
   selector: 'app-add-recipe',
   templateUrl: './add-recipe.component.html',
   styleUrls: ['./add-recipe.component.scss']
 })
 export class AddRecipeComponent implements OnInit {
+
+  editor = ClassicEditor;
+  editorConfig = {
+    toolbar: {
+        items: [
+            'bold',
+            'italic',
+            'link',
+            'bulletedList',
+            'numberedList',
+            '|',
+            'indent',
+            'outdent',
+            '|',
+            'codeBlock',
+            'imageUpload',
+            'blockQuote',
+            'insertTable',
+            'undo',
+            'redo',
+        ]
+    },
+    image: {
+        toolbar: [
+            'imageStyle:full',
+            'imageStyle:side',
+            '|',
+            'imageTextAlternative'
+        ]
+    },
+    table: {
+        contentToolbar: [
+            'tableColumn',
+            'tableRow',
+            'mergeTableCells'
+        ]
+    },
+    height: 300,
+};
+
   form = new FormGroup({
     title: new FormControl('', [Validators.required, Validators.minLength(5)]),
     description: new FormControl('', [Validators.required]),
     image: new FormControl('', [Validators.required]),
-    difficulty: new FormControl('', [Validators.required]),
-    published: new FormControl('')
+    difficulty: new FormControl<number>(Number(''), [Validators.required]),
+    published: new FormControl<boolean>(Boolean(''))
   })
   images = [
     {id:1,
@@ -32,7 +74,7 @@ export class AddRecipeComponent implements OnInit {
   }
   onSubmit() {
     console.log(this.form.value);
-    this.recipeService.saveRecipe(this.form.value).subscribe();
+    this.recipeService.saveRecipe(this.form.getRawValue()).subscribe();
     this.onProva();
   }
   onProva(){

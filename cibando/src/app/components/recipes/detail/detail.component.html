@@ -2,7 +2,8 @@
   <div>
     <img src="{{ricetta.image}}" class="img-fluid" alt="Responsive image">
     <p class="h1">{{ricetta.title}}</p>
-    <p class="text-justify">{{ricetta.description}}</p>
+    <!-- <p class="text-justify">{{ricetta.description}}</p> -->
+    <p class="text-justify"><span [innerHTML]="ricetta.description | slice: 0:250"></span></p>
     <p class="h5">Difficoltà:</p>
       <div class="row">
         <img class="difficolta" [src]="percorsoDifficolta + ricetta?.difficulty + '.png'" alt="difficoltà">
